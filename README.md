@@ -101,6 +101,9 @@ F. Optional endpoints to check persistance layer work:
 * GET http://localhost:8080/api/statistic/inputs - returns all inputs from current session
 * GET http://localhost:8080/api/statistic/outputs - returns all outputs from current session
 
+All endpoints can be called via Postman or similar program.
+If you need Postman endpoints collection - contact me.
+
 ## Validators
 
 * Grid size: existence, both coordinates presented, extra coordinates
