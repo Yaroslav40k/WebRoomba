@@ -22,14 +22,6 @@ public class RoboticHoover implements Hoover {
     }
 
     @Override
-    public void deployOn() {
-        int[] hooverStartPosition = grid.getHooverStartPosition();
-        int xStartCoordForHoover = hooverStartPosition[0];
-        int yStartCoordForHoover =hooverStartPosition[1];
-        this.setLocation(grid.getGridCells()[xStartCoordForHoover][yStartCoordForHoover]);
-    }
-
-    @Override
     public void move(char direction) throws IllegalArgumentException {
         GridCellAddress newHoverLocation = new GridCellAddress(this.getLocation().getAddress().getXCoordinate(), this.getLocation().getAddress().getYCoordinate());
         switch (direction) {

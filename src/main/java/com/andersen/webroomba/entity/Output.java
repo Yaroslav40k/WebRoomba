@@ -9,6 +9,11 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 /**
+ * It is an entity class, that holds
+ * @see GridCleaningResult
+ * in a DB.
+ * In addition it has an id, foreign key to input  and creation day to help a user to identify an input.
+ *
  * @author Yaroslav Dmitriev (
  * @since 15.05.2021
  */

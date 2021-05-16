@@ -5,6 +5,8 @@ import com.google.gson.GsonBuilder;
 import org.springframework.stereotype.Component;
 
 /**
+ * Serializes Java objects to JSON string using Gson library.
+ *
  * @author Yaroslav Dmitriev (
  * @since 15.05.2021
  */

@@ -5,6 +5,14 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
+ * This class holds all the information, needed to fire up the application 'run' method.
+ * @see com.andersen.webroomba.controller.ActionController
+ *
+ * roomSize - size of a grid (X and Y length)
+ * coords - hoover start position (X and Y coordinates)
+ * patches - dirt patches position (X and Y coordinates)
+ * instructions - chars, dedicated to show direction for hoover movements
+ *
  * @author Yaroslav Dmitriev (
  * @since 15.05.2021
  */

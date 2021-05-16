@@ -4,6 +4,8 @@ import com.andersen.webroomba.model.implementation.GridCell;
 import com.andersen.webroomba.model.implementation.RoomGrid;
 
 /**
+ * Basic interface for a hoover.
+ *
  * @author Yaroslav Dmitriev (
  * @since 15.05.2021
  */
@@ -14,12 +16,20 @@ public interface Hoover {
      */
     void fillDirtContainer ();
 
+    /**
+     * Moves a hoover in a transmitted direction.
+     *
+     * @param direction - a char from compass - could be W-N-E-S
+     */
+    void move(char direction) throws IllegalArgumentException;
 
     /**
-     * Deploy`s  a hoover on the grid.
+     * Checks, if a cell is dirty, and it is....
+     * cleans a cell from dirt and collects it to a hoover`s container
      *
      */
-    void deployOn();
+    void cleanCell();
+
 
     Grid getGrid();
 
@@ -46,17 +56,6 @@ public interface Hoover {
      * @param gridCell
      */
     void setLocation(GridCell gridCell);
-
-    /**
-     *
-     * @param direction
-     */
-    void move(char direction) throws IllegalArgumentException;
-
-    /**
-     *
-     */
-    void cleanCell();
 
     /**
      *

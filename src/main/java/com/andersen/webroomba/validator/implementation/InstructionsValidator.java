@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 import java.util.regex.Pattern;
 
 /**
+ * Validates hoover instructions.
+ *
  * @author Yaroslav Dmitriev (
  * @since 15.05.2021
  */

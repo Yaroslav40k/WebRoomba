@@ -15,6 +15,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
+ * This controller was not described in test task requirements.
+ * Created only to show the result of persistance layer work.
+ *
  * @author Yaroslav Dmitriev (
  * @since 15.05.2021
  */

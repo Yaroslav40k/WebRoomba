@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * WebRoomba main controller. Typical, REST compatible.
+ * Provides access to 'run' method.
+ *
  * @author Yaroslav Dmitriev (
  * @since 15.05.2021
  */

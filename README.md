@@ -34,7 +34,7 @@ Driving into a wall has no effect (the robot skids in place).
     Click the green "clone or download repository" button on the top right of the repository.
     In order to clone, you will need to have git installed on your computer.
     
-2.You need to download and install Maven : https://maven.apache.org/.    
+2. You need to download and install Maven : https://maven.apache.org/.    
     
 3. Use Maven 'mvn package' command to  build a JAR file, don`t forget to run 'mvn clean' before the build.
     By default, 'webroomba-1.0.jar' will be located in 'target' folder inside the project directory.
@@ -63,30 +63,28 @@ Application can be deployed on any suitable machine, since it is based on Spring
                Go to your ".jar" file directory. 
                Type the following command: java -jar webroomba-1.0.jar.
                
-2. By default, WebRoomba service picks port 8080 and fails if it is already in use.
+  *  By default, WebRoomba service picks port 8080 and fails if it is already in use.
 
-3. On http://localhost:8080/h2-console will be in-memory H2 data base console. Since in the task requirements, 
-   it was clearly stated, that we need to persist  each input and output to a DB.
-   You can check it every time after an application has started.
+  *  On http://localhost:8080/h2-console will be in-memory H2 data base console. Since in the task requirements, 
+     it was clearly stated, that we need to persist  each input and output to a DB.
+     You can check it every time after an application has started.
    
 ## Sending commands
 
-An application provides 3 different endpoints:              
+A. An application provides 3 different endpoints:              
 
 * POST http://localhost:8080/api/action/run - runs application main logic
-* GET http://localhost:8080/api/statistic/inputs - returns all inputs from current session
-* GET http://localhost:8080/api/statistic/outputs - returns all outputs from current session
 
-* Response statuses:
+B. Response statuses:
 * 200: The instruction processed successfully
 * 400: Bad request - you have made a mistake in input JSON
 * 500: There was an unknown problem  in WebRoomba application.
 
-* Headers:
+C. Headers:
 * Accept: application/json
 * Content-type: application/json;charset=UTF-8
 
-* Input example:
+D. Input example:
 {"roomSize": [5,5],"coords": [0,0],"patches": [[0,2],[0,3],[0,4]],"instructions": "WNNES"}
 
 * roomSize - size of a grid (X and Y length)
@@ -94,10 +92,14 @@ An application provides 3 different endpoints:
 * patches - dirt patches position (X and Y coordinates)
 * instructions - chars, dedicated to show direction for hoover movements
 
-* Output example:
+E. Output example:
 {"coords": [1,1],"patches": 1}
 * coords - hoover final position
 * patches - collected dirt patches
+
+F. Optional endpoints to check persistance layer work:
+* GET http://localhost:8080/api/statistic/inputs - returns all inputs from current session
+* GET http://localhost:8080/api/statistic/outputs - returns all outputs from current session
 
 ## Validators
 

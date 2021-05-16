@@ -14,6 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 
 /**
+ * Main REST exception handler of the application.
+ * Takes care of IllegalArgumentException and HttpMessageNotReadableException with a custom message.
+ * For all other exceptions makes default message.
+ *
  * @author Yaroslav Dmitriev (
  * @since 15.05.2021
  */

@@ -6,6 +6,9 @@ import com.andersen.webroomba.entity.Output;
 import org.springframework.stereotype.Component;
 
 /**
+ * Simple mapper to map Output entity to dto.
+ * Helps us to avoid problems with using entities on Controller layer.
+ *
  * @author Yaroslav Dmitriev (
  * @since 15.05.2021
  */

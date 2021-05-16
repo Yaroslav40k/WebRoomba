@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
+ * Validates dirt positions on the grid.
+ *
  * @author Yaroslav Dmitriev (
  * @since 15.05.2021
  */

@@ -5,6 +5,9 @@ import com.andersen.webroomba.entity.Input;
 import org.springframework.stereotype.Component;
 
 /**
+ * Simple mapper to map Input entity to dto.
+ * Helps us to avoid problems with using entities on Controller layer.
+ *
  * @author Yaroslav Dmitriev (
  * @since 15.05.2021
  */

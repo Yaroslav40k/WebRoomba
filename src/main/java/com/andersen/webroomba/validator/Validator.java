@@ -1,6 +1,8 @@
 package com.andersen.webroomba.validator;
 
 /**
+ * Represents a generic validator
+ *
  * @author Yaroslav Dmitriev (
  * @since 15.05.2021
  */

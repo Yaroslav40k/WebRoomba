@@ -1,8 +1,10 @@
 package com.andersen.webroomba.exception.response;
 
 /**
- * @author Anthony Webster (awe)
- * @since 17/07/2017
+ * Custom class to pass an information about application exception  in  HTTP response.
+ *
+ * @author Yaroslav Dmitriev (
+ * @since 15.05.2021
  */
 public class ErrorResponse {
 

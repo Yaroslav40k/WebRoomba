@@ -5,6 +5,8 @@ import com.andersen.webroomba.validator.Validator;
 import org.springframework.stereotype.Component;
 
 /**
+ * Validates grid size settings.
+ *
  * @author Yaroslav Dmitriev (
  * @since 15.05.2021
  */

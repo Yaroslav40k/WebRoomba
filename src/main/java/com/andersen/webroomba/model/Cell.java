@@ -1,6 +1,8 @@
 package com.andersen.webroomba.model;
 
 /**
+ * Basic interface for a cell of some room, where hoover or other object is working.
+ *
  * @author Yaroslav Dmitriev (
  * @since 15.05.2021
  */
@@ -21,9 +23,9 @@ public interface Cell {
 
     /**
      *
-     * @param b
+     * @param dirty
      */
-    void setDirty(boolean b);
+    void setDirty(boolean dirty);
 
 
     /**

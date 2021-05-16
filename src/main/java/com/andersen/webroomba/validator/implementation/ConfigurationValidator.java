@@ -5,6 +5,8 @@ import com.andersen.webroomba.validator.Validator;
 import org.springframework.stereotype.Component;
 
 /**
+ * Validates Grid configuration using smaller validators.
+ *
  * @author Yaroslav Dmitriev (
  * @since 15.05.2021
  */

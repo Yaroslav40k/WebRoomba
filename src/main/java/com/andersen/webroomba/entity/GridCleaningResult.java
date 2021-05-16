@@ -3,6 +3,9 @@ package com.andersen.webroomba.entity;
 import java.io.Serializable;
 
 /**
+ * This class represents the result of a hoover work.
+ * How many dirt patches were collected and what is hoover`s final position on the grid.
+ *
  * @author Yaroslav Dmitriev (
  * @since 15.05.2021
  */

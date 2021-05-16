@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonRawValue;
 import java.time.LocalDateTime;
 
 /**
+ * This is a simple DTO to pass Input data to the end-user in a response.
+ * @see com.andersen.webroomba.entity.Input
+ *
  * @author Yaroslav Dmitriev (
  * @since 15.05.2021
  */

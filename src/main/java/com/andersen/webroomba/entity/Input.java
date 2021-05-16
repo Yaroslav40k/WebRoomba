@@ -7,6 +7,11 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 /**
+ * It is an entity class, that holds
+ * @see GridConfiguration
+ * in a DB.
+ * In addition it has an id  and creation day to help a user to identify an input.
+ *
  * @author Yaroslav Dmitriev (
  * @since 15.05.2021
  */
