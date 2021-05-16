@@ -50,16 +50,16 @@ Application can be deployed on any suitable machine, since it is based on Spring
 ## Running the application
 1. Run jar file using a Java VM via simple command console:  'java -jar webroomba-{jar_version}.jar'
     Latest version by now is 1.0. Don`t forget!
-    On Windows - Open Windows command prompt. Go to your ".jar" file directory.
+  *   On Windows - Open Windows command prompt. Go to your ".jar" file directory.
                  So if jar file is located in C:\somefolder, 
                  Type the following command: java -jar webroomba-1.0.jar.
     
-    On Linux - Open a command prompt with CTRL + ALT + T.
+  *   On Linux - Open a command prompt with CTRL + ALT + T.
                Go to your ".jar" file directory. If your Ubuntu version / flavour supports it, 
                you should be able to right click on your ".jar" file's directory and click "Open in Terminal"
                Type the following command: java -jar webroomba-1.0.jar.
                
-    On Mac -   Open Terminal.
+  *   On Mac -   Open Terminal.
                Go to your ".jar" file directory. 
                Type the following command: java -jar webroomba-1.0.jar.
                
@@ -73,38 +73,38 @@ Application can be deployed on any suitable machine, since it is based on Spring
 
 An application provides 3 different endpoints:              
 
-POST http://localhost:8080/api/action/run - runs application main logic
-GET http://localhost:8080/api/statistic/inputs - returns all inputs from current session
-GET http://localhost:8080/api/statistic/outputs - returns all outputs from current session
+* POST http://localhost:8080/api/action/run - runs application main logic
+* GET http://localhost:8080/api/statistic/inputs - returns all inputs from current session
+* GET http://localhost:8080/api/statistic/outputs - returns all outputs from current session
 
-Response statuses:
-200: The instruction processed successfully
-400: Bad request - you have made a mistake in input JSON
-500: There was an unknown problem  in WebRoomba application.
+* Response statuses:
+* 200: The instruction processed successfully
+* 400: Bad request - you have made a mistake in input JSON
+* 500: There was an unknown problem  in WebRoomba application.
 
-Headers:
-Accept: application/json
-Content-type: application/json;charset=UTF-8
+* Headers:
+* Accept: application/json
+* Content-type: application/json;charset=UTF-8
 
-Input example:
+* Input example:
 {"roomSize": [5,5],"coords": [0,0],"patches": [[0,2],[0,3],[0,4]],"instructions": "WNNES"}
 
-roomSize - size of a grid (X and Y length)
-coords - hoover start position (X and Y coordinates)
-patches - dirt patches position (X and Y coordinates)
-instructions - chars, dedicated to show direction for hoover movements
+* roomSize - size of a grid (X and Y length)
+* coords - hoover start position (X and Y coordinates)
+* patches - dirt patches position (X and Y coordinates)
+* instructions - chars, dedicated to show direction for hoover movements
 
-Output example:
+* Output example:
 {"coords": [1,1],"patches": 1}
-coords - hoover final position
-patches - collected dirt patches
+* coords - hoover final position
+* patches - collected dirt patches
 
 ## Validators
 
-Grid size: existence, both coordinates presented, extra coordinates
-Hoover start position: existence, both coordinates presented, extra coordinates, out of grid coordinates
-Dirt patches position: both coordinates presented, extra coordinates, 
-Instructions: existence, lower case chars, letters
+* Grid size: existence, both coordinates presented, extra coordinates
+* Hoover start position: existence, both coordinates presented, extra coordinates, out of grid coordinates
+* Dirt patches position: both coordinates presented, extra coordinates, 
+* Instructions: existence, lower case chars, letters
 
 For more information check 'com.andersen.webroomba.validator' package.
 
