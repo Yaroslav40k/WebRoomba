@@ -1,13 +1,13 @@
-package com.andersen.webroomba.entity;
+package com.andersen.webroomba.entity.implementation;
 
-import com.andersen.webroomba.entity.basic.PersistentEntity;
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import com.andersen.webroomba.entity.inner.GridConfiguration;
+import com.andersen.webroomba.entity.Identifiable;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
 /**
- * It is an entity class, that holds
+ * It is an entity class, that holds inner object
  * @see GridConfiguration
  * in a DB.
  * In addition it has an id  and creation day to help a user to identify an input.
@@ -16,7 +16,11 @@ import java.util.Objects;
  * @since 15.05.2021
  */
 @Entity
-public class Input  extends PersistentEntity {
+public class InputEntity implements Identifiable<Long> {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
 
     @Column
     private String configuration;
@@ -40,13 +44,22 @@ public class Input  extends PersistentEntity {
         this.creationDate = creationDate;
     }
 
+    @Override
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        Input input = (Input) o;
+        InputEntity input = (InputEntity) o;
         return Objects.equals(getConfiguration(), input.getConfiguration()) &&
                 Objects.equals(getCreationDate(), input.getCreationDate());
     }

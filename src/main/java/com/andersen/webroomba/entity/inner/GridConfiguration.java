@@ -1,11 +1,13 @@
-package com.andersen.webroomba.entity;
+package com.andersen.webroomba.entity.inner;
+
+import com.andersen.webroomba.controllers.implementation.ActionControllerImpl;
 
 import java.io.Serializable;
 import java.util.List;
 
 /**
  * This class holds all the information, needed to fire up the application 'run' method.
- * @see com.andersen.webroomba.controller.ActionController
+ * @see ActionControllerImpl
  *
  * roomSize - size of a grid (X and Y length)
  * coords - hoover start position (X and Y coordinates)

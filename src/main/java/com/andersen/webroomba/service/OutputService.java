@@ -1,8 +1,8 @@
 package com.andersen.webroomba.service;
 
-import com.andersen.webroomba.entity.GridCleaningResult;
-import com.andersen.webroomba.entity.Input;
-import com.andersen.webroomba.entity.Output;
+import com.andersen.webroomba.entity.inner.GridCleaningResult;
+import com.andersen.webroomba.entity.implementation.InputEntity;
+import com.andersen.webroomba.entity.implementation.OutputEntity;
 
 import java.util.List;
 
@@ -20,14 +20,14 @@ public interface OutputService {
      * @param result core model, to be saved in Output object.
      * @return saved Output entity.
      */
-    Output saveOutput(Input input, GridCleaningResult result);
+    OutputEntity saveOutput(InputEntity input, GridCleaningResult result);
 
     /**
      * Gets all outputs from DB.
      *
      * @return all outputs from data base
      */
-    List<Output> getAllOutputs();
+    List<OutputEntity> getAllOutputs();
 
 
 }

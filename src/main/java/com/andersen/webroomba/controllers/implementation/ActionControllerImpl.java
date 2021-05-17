@@ -1,8 +1,9 @@
-package com.andersen.webroomba.controller;
+package com.andersen.webroomba.controllers.implementation;
 
-import com.andersen.webroomba.entity.GridCleaningResult;
-import com.andersen.webroomba.entity.GridConfiguration;
-import com.andersen.webroomba.entity.Input;
+import com.andersen.webroomba.controllers.ActionController;
+import com.andersen.webroomba.entity.inner.GridCleaningResult;
+import com.andersen.webroomba.entity.inner.GridConfiguration;
+import com.andersen.webroomba.entity.implementation.InputEntity;
 import com.andersen.webroomba.model.Hoover;
 import com.andersen.webroomba.model.implementation.RoomGrid;
 import com.andersen.webroomba.service.*;
@@ -23,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/api/action")
-public class ActionController {
+public class ActionControllerImpl implements ActionController {
 
     private final InputService inputService;
     private final OutputService outputService;
@@ -32,12 +33,12 @@ public class ActionController {
     private final HooverCreatorService hooverCreator;
     private final RoomCleanerService roomCleanerService;
 
-    public ActionController(InputService inputService,
-                            OutputService outputService,
-                            ConfigurationValidator configurationValidator,
-                            GridCreatorService roomGridCreatorService,
-                            HooverCreatorService roboticHooverCreatorService,
-                            RoomCleanerService roomCleanerService) {
+    public ActionControllerImpl(final InputService inputService,
+                                final OutputService outputService,
+                                final ConfigurationValidator configurationValidator,
+                                final GridCreatorService roomGridCreatorService,
+                                final HooverCreatorService roboticHooverCreatorService,
+                                final RoomCleanerService roomCleanerService) {
         this.inputService = inputService;
         this.outputService = outputService;
         this.configurationValidator = configurationValidator;
@@ -46,9 +47,10 @@ public class ActionController {
         this.roomCleanerService = roomCleanerService;
     }
 
+    @Override
     @PostMapping("/run")
-    public ResponseEntity<GridCleaningResult> run(@RequestBody GridConfiguration configuration) {
-        Input input = inputService.saveInput(configuration);
+    public ResponseEntity<GridCleaningResult> run(final @RequestBody GridConfiguration configuration) {
+        InputEntity input = inputService.saveInput(configuration);
         configurationValidator.validate(configuration);
         RoomGrid grid = gridCreatorService.createGrid(configuration);
         Hoover hoover = hooverCreator.createHoover(grid, configuration);

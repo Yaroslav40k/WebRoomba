@@ -1,7 +1,7 @@
 package com.andersen.webroomba.service.implemantation;
 
-import com.andersen.webroomba.entity.GridConfiguration;
-import com.andersen.webroomba.entity.Input;
+import com.andersen.webroomba.entity.inner.GridConfiguration;
+import com.andersen.webroomba.entity.implementation.InputEntity;
 import com.andersen.webroomba.repository.InputRepository;
 import com.andersen.webroomba.serializer.ObjectToJsonSerializer;
 import com.andersen.webroomba.service.InputService;
@@ -20,21 +20,21 @@ public class InputServiceImpl implements InputService {
     private final InputRepository repository;
     private final ObjectToJsonSerializer serializer;
 
-    public InputServiceImpl(InputRepository repository, ObjectToJsonSerializer serializer) {
+    public InputServiceImpl(final InputRepository repository, final ObjectToJsonSerializer objectToJsonSerializerImpl) {
         this.repository = repository;
-        this.serializer = serializer;
+        this.serializer = objectToJsonSerializerImpl;
     }
 
     @Override
-    public Input saveInput(GridConfiguration configuration) {
-        Input input = new Input();
+    public InputEntity saveInput(final GridConfiguration configuration) {
+        InputEntity input = new InputEntity();
         input.setConfiguration(serializer.serializeObject(configuration));
         input.setCreationDate(LocalDateTime.now());
         return repository.save(input);
     }
 
     @Override
-    public List<Input> getAllInputs() {
+    public List<InputEntity> getAllInputs() {
         return repository.findAll();
     }
 

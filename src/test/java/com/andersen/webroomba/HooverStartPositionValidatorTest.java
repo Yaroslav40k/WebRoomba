@@ -1,6 +1,6 @@
 package com.andersen.webroomba;
 
-import com.andersen.webroomba.entity.GridConfiguration;
+import com.andersen.webroomba.entity.inner.GridConfiguration;
 import com.andersen.webroomba.exception.MissingParameterException;
 import com.andersen.webroomba.validator.Validator;
 import com.andersen.webroomba.validator.implementation.HooverStartPositionValidator;

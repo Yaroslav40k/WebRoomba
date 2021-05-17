@@ -14,7 +14,7 @@ public class GridCell implements Cell {
 
     public GridCell() {}
 
-    public GridCell(CellAddress address, boolean dirty) {
+    public GridCell(final CellAddress address, final boolean dirty) {
         this.address = address;
         this.dirty = dirty;
     }
@@ -30,8 +30,8 @@ public class GridCell implements Cell {
     }
 
     @Override
-    public void setDirty(boolean b) {
-       this.dirty=true;
+    public void setDirty(boolean dirty) {
+       this.dirty=dirty;
     }
 
     @Override

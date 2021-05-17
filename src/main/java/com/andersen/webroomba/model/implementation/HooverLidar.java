@@ -16,7 +16,7 @@ public class HooverLidar implements Lidar {
     private int maxYCoordinate;
 
     @Override
-    public boolean isWithinTheGrid(CellAddress address) {
+    public boolean isWithinTheGrid(final CellAddress address) {
         boolean withinXDimensionLimits = address.getXCoordinate() <= maxXCoordinate && address.getXCoordinate() >= MIN_X_COORDINATE;
         boolean withinYDimensionLimits = address.getYCoordinate() <= maxYCoordinate && address.getYCoordinate() >= MIN_Y_COORDINATE;
         return withinXDimensionLimits && withinYDimensionLimits;

@@ -1,6 +1,6 @@
 package com.andersen.webroomba.service;
 
-import com.andersen.webroomba.entity.GridCleaningResult;
+import com.andersen.webroomba.entity.inner.GridCleaningResult;
 import com.andersen.webroomba.model.Hoover;
 
 /**

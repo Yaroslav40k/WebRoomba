@@ -1,9 +1,11 @@
-package com.andersen.webroomba.controller;
+package com.andersen.webroomba.controllers.implementation;
 
+import com.andersen.webroomba.controllers.StatisticController;
 import com.andersen.webroomba.dto.InputDto;
 import com.andersen.webroomba.dto.OutputDto;
-import com.andersen.webroomba.mapper.InputToDtoMapper;
-import com.andersen.webroomba.mapper.OutputToDtoMapper;
+import com.andersen.webroomba.entity.implementation.InputEntity;
+import com.andersen.webroomba.entity.implementation.OutputEntity;
+import com.andersen.webroomba.mapper.Mapper;
 import com.andersen.webroomba.service.InputService;
 import com.andersen.webroomba.service.OutputService;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * This controller was not described in test task requirements.
@@ -23,32 +24,34 @@ import java.util.stream.Collectors;
  */
 @RestController
 @RequestMapping(value = "/api/statistic")
-public class StatisticController {
+public class StatisticControllerImpl implements StatisticController {
 
     private final InputService inputService;
     private final OutputService outputService;
-    private final InputToDtoMapper inputToDtoMapper;
-    private final OutputToDtoMapper outputToDtoMapper;
+    private final Mapper<InputDto, InputEntity> inputMapper;
+    private final Mapper<OutputDto, OutputEntity> outputMapper;
 
-    public StatisticController(InputService inputService,
-                               OutputService outputService,
-                               InputToDtoMapper inputToDtoMapper,
-                               OutputToDtoMapper outputToDtoMapper) {
+    public StatisticControllerImpl(final InputService inputService,
+                                   final OutputService outputService,
+                                   final Mapper<InputDto, InputEntity> inputMapper,
+                                   final Mapper<OutputDto, OutputEntity> outputMapper) {
         this.inputService = inputService;
         this.outputService = outputService;
-        this.inputToDtoMapper = inputToDtoMapper;
-        this.outputToDtoMapper = outputToDtoMapper;
+        this.inputMapper = inputMapper;
+        this.outputMapper = outputMapper;
     }
 
+    @Override
     @GetMapping("/inputs")
     public ResponseEntity<List<InputDto>> getAllInputs() {
-        List<InputDto> body = inputService.getAllInputs().stream().map(inputToDtoMapper::map).collect(Collectors.toList());
+        List<InputDto> body = inputMapper.map(inputService.getAllInputs());
         return ResponseEntity.ok(body);
     }
 
+    @Override
     @GetMapping("/outputs")
     public ResponseEntity<List<OutputDto>> getAllOutputs() {
-        List<OutputDto> body = outputService.getAllOutputs().stream().map(outputToDtoMapper::map).collect(Collectors.toList());
+        List<OutputDto> body = outputMapper.map(outputService.getAllOutputs());
         return ResponseEntity.ok(body);
     }
 

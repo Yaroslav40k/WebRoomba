@@ -1,6 +1,6 @@
 package com.andersen.webroomba;
 
-import com.andersen.webroomba.entity.GridConfiguration;
+import com.andersen.webroomba.entity.inner.GridConfiguration;
 import com.andersen.webroomba.validator.implementation.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

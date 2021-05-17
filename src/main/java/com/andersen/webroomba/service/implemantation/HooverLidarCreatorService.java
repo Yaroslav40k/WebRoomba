@@ -13,10 +13,10 @@ import org.springframework.stereotype.Service;
 public class HooverLidarCreatorService implements LidarCreatorService {
 
     @Override
-    public Lidar createLidar(int[] roomSize) {
+    public Lidar createLidar(final int[] roomSize) {
         Lidar lidar = new HooverLidar();
-        lidar.setMaxXCoordinate(roomSize[0]);
-        lidar.setMaxYCoordinate(roomSize[0]);
+        lidar.setMaxXCoordinate(roomSize[0]-1);
+        lidar.setMaxYCoordinate(roomSize[0]-1);
         return lidar;
     }
 

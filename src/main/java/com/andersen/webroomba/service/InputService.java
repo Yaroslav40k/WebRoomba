@@ -1,7 +1,7 @@
 package com.andersen.webroomba.service;
 
-import com.andersen.webroomba.entity.GridConfiguration;
-import com.andersen.webroomba.entity.Input;
+import com.andersen.webroomba.entity.inner.GridConfiguration;
+import com.andersen.webroomba.entity.implementation.InputEntity;
 
 import java.util.List;
 
@@ -20,14 +20,14 @@ public interface InputService {
      * @param configuration core model, to be saved in Input object.
      * @return saved Input entity.
      */
-    Input saveInput(GridConfiguration configuration);
+    InputEntity saveInput(GridConfiguration configuration);
 
     /**
      * Gets all inputs from DB.
      *
      * @return all inputs from data base
      */
-    List<Input> getAllInputs();
+    List<InputEntity> getAllInputs();
 
 
 }

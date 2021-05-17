@@ -1,6 +1,6 @@
 package com.andersen.webroomba;
 
-import com.andersen.webroomba.entity.GridConfiguration;
+import com.andersen.webroomba.entity.inner.GridConfiguration;
 import com.andersen.webroomba.model.implementation.GridCell;
 import com.andersen.webroomba.model.implementation.RoomGrid;
 import com.andersen.webroomba.service.implemantation.RoomGridCreatorService;

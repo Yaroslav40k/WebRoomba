@@ -1,7 +1,7 @@
 package com.andersen.webroomba.exception;
 
 /**
- * Custom RuntimeException to notify about 'null' or empty parameter in a JSOn file.
+ * Custom RuntimeException to notify about 'null' or empty parameter in a JSON file.
  * @see RuntimeException
  * @see IllegalArgumentException
  *

@@ -1,6 +1,6 @@
 package com.andersen.webroomba.service.implemantation;
 
-import com.andersen.webroomba.entity.GridCleaningResult;
+import com.andersen.webroomba.entity.inner.GridCleaningResult;
 import com.andersen.webroomba.model.Hoover;
 import com.andersen.webroomba.service.HooverCommandsExecutorService;
 import com.andersen.webroomba.service.HooverDeployerService;
@@ -19,9 +19,9 @@ public class RoomCleanerServiceImpl implements RoomCleanerService {
     private final HooverCommandsExecutorService hooverCommandsExecutor;
     private final ResultAcquirerService resultAcquirerService;
 
-    public RoomCleanerServiceImpl(HooverDeployerService hooverDeployer,
-                                  HooverCommandsExecutorService hooverCommandsExecutor,
-                                  ResultAcquirerService hooverWorkResultAcquirerServiceImpl) {
+    public RoomCleanerServiceImpl(final HooverDeployerService hooverDeployer,
+                                  final HooverCommandsExecutorService hooverCommandsExecutor,
+                                  final ResultAcquirerService hooverWorkResultAcquirerServiceImpl) {
         this.hooverDeployer = hooverDeployer;
         this.hooverCommandsExecutor = hooverCommandsExecutor;
         this.resultAcquirerService = hooverWorkResultAcquirerServiceImpl;

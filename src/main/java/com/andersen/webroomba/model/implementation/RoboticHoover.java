@@ -22,7 +22,7 @@ public class RoboticHoover implements Hoover {
     }
 
     @Override
-    public void move(char direction) throws IllegalArgumentException {
+    public void move(final char direction) throws IllegalArgumentException {
         GridCellAddress newHoverLocation = new GridCellAddress(this.getLocation().getAddress().getXCoordinate(), this.getLocation().getAddress().getYCoordinate());
         switch (direction) {
             case ('W'):

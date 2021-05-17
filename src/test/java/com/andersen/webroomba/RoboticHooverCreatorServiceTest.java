@@ -1,12 +1,10 @@
 package com.andersen.webroomba;
 
-import com.andersen.webroomba.entity.GridConfiguration;
+import com.andersen.webroomba.entity.inner.GridConfiguration;
 import com.andersen.webroomba.model.Hoover;
-import com.andersen.webroomba.model.implementation.GridCell;
 import com.andersen.webroomba.model.implementation.HooverLidar;
 import com.andersen.webroomba.model.implementation.RoomGrid;
 import com.andersen.webroomba.service.LidarCreatorService;
-import com.andersen.webroomba.service.implemantation.InputServiceImpl;
 import com.andersen.webroomba.service.implemantation.RoboticHooverCreatorService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,8 +12,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;

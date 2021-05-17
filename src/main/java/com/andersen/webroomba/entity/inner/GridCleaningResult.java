@@ -1,4 +1,4 @@
-package com.andersen.webroomba.entity;
+package com.andersen.webroomba.entity.inner;
 
 import java.io.Serializable;
 

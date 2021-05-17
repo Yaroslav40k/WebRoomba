@@ -1,15 +1,13 @@
-package com.andersen.webroomba.entity;
+package com.andersen.webroomba.entity.implementation;
 
-import com.andersen.webroomba.entity.basic.PersistentEntity;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import com.andersen.webroomba.entity.inner.GridCleaningResult;
+import com.andersen.webroomba.entity.Identifiable;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
 /**
- * It is an entity class, that holds
+ * It is an entity class, that holds inner object
  * @see GridCleaningResult
  * in a DB.
  * In addition it has an id, foreign key to input  and creation day to help a user to identify an input.
@@ -19,11 +17,15 @@ import java.util.Objects;
  */
 
 @Entity
-public class Output extends PersistentEntity {
+public class OutputEntity implements Identifiable<Long> {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
 
     @OneToOne
     @JoinColumn(name = "input_id")
-    private Input input;
+    private InputEntity input;
 
     @Column
     private String result;
@@ -31,11 +33,11 @@ public class Output extends PersistentEntity {
     @Column(name = "creation_date")
     private LocalDateTime creationDate;
 
-    public Input getInput() {
+    public InputEntity getInput() {
         return input;
     }
 
-    public void setInput(Input input) {
+    public void setInput(InputEntity input) {
         this.input = input;
     }
 
@@ -56,11 +58,20 @@ public class Output extends PersistentEntity {
     }
 
     @Override
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        Output output = (Output) o;
+        OutputEntity output = (OutputEntity) o;
         return Objects.equals(getInput(), output.getInput()) &&
                 Objects.equals(getResult(), output.getResult()) &&
                 Objects.equals(getCreationDate(), output.getCreationDate());

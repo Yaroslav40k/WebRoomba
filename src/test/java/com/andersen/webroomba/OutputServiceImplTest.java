@@ -1,10 +1,10 @@
 package com.andersen.webroomba;
 
-import com.andersen.webroomba.entity.GridCleaningResult;
-import com.andersen.webroomba.entity.Input;
-import com.andersen.webroomba.entity.Output;
+import com.andersen.webroomba.entity.inner.GridCleaningResult;
+import com.andersen.webroomba.entity.implementation.InputEntity;
+import com.andersen.webroomba.entity.implementation.OutputEntity;
 import com.andersen.webroomba.repository.OutputRepository;
-import com.andersen.webroomba.serializer.ObjectToJsonSerializer;
+import com.andersen.webroomba.serializer.implementation.ObjectToJsonSerializerImpl;
 import com.andersen.webroomba.service.implemantation.OutputServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -32,7 +32,7 @@ class OutputServiceImplTest {
     @Mock
     private OutputRepository repository;
     @Mock
-    private ObjectToJsonSerializer serializer;
+    private ObjectToJsonSerializerImpl serializer;
 
     @BeforeEach
     void setUp() {
@@ -43,9 +43,9 @@ class OutputServiceImplTest {
     @ValueSource(strings = {"{\"coords\" : [1, 3],\"patches\" : 1}"})
     void saveOutput_withValidConfiguration_expectingCreatedOutput(String serializedOutput) {
         when(serializer.serializeObject(any(GridCleaningResult.class))).thenReturn(serializedOutput);
-        when(repository.save(any(Output.class))).then(AdditionalAnswers.returnsFirstArg());
+        when(repository.save(any(OutputEntity.class))).then(AdditionalAnswers.returnsFirstArg());
 
-        Input suspiciousInput = new Input();
+        InputEntity suspiciousInput = new InputEntity();
         GridCleaningResult suspiciousResult = new GridCleaningResult();
         suspiciousResult.setCoords(new int[] {1, 3});
         suspiciousResult.setPatches(1);
@@ -53,12 +53,12 @@ class OutputServiceImplTest {
         outputService.saveOutput(suspiciousInput,suspiciousResult);
 
         verify(serializer, times(1)).serializeObject(any(GridCleaningResult.class));
-        verify(repository, times(1)).save(any(Output.class));
+        verify(repository, times(1)).save(any(OutputEntity.class));
     }
 
     @Test
     void getAllOutputs_expectingListOfInputs() {
-        when(repository.findAll()).thenReturn(List.of(new Output()));
+        when(repository.findAll()).thenReturn(List.of(new OutputEntity()));
 
         outputService.getAllOutputs();
 

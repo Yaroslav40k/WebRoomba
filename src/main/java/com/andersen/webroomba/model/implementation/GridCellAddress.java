@@ -12,7 +12,7 @@ public class GridCellAddress implements CellAddress {
     private int xCoordinate;
     private int yCoordinate;
 
-    public GridCellAddress(int xCoordinate, int yCoordinate) {
+    public GridCellAddress(final int xCoordinate, final int yCoordinate) {
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
     }
