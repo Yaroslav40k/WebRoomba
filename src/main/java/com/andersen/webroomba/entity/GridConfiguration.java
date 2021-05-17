@@ -1,6 +1,5 @@
 package com.andersen.webroomba.entity;
 
-
 import java.io.Serializable;
 import java.util.List;
 

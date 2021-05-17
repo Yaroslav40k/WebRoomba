@@ -49,7 +49,6 @@ public class RestExceptionHandler {
         return new ErrorResponse(BAD_JSON, BAD_JSON_ERROR_MESSAGE);
     }
 
-
     @ExceptionHandler(Exception.class)
     @ResponseBody
     public ErrorResponse handleException(final Exception exception, final HttpServletResponse response) {
