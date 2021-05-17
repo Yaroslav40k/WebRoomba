@@ -14,7 +14,9 @@ public class HooverWorkResultAcquirerServiceImpl implements ResultAcquirerServic
 
     @Override
     public GridCleaningResult acquireExecutionResults(Hoover hoover) {
-        int[] hooverFinalPosition = {hoover.getLocation().getAddress().getXCoordinate(), hoover.getLocation().getAddress().getYCoordinate()};
+        int xCoordinate = hoover.getLocation().getAddress().getXCoordinate();
+        int yCoordinate = hoover.getLocation().getAddress().getYCoordinate();
+        int[] hooverFinalPosition = {xCoordinate, yCoordinate};
         return  new GridCleaningResult(hooverFinalPosition, hoover.getCollectedDirtPatches());
     }
 

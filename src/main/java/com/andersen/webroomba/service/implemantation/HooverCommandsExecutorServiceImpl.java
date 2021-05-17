@@ -12,12 +12,11 @@ import org.springframework.stereotype.Service;
 public class HooverCommandsExecutorServiceImpl implements HooverCommandsExecutorService {
 
     public void executeCommands(Hoover hoover) {
-        for (char direction : hoover.getInstructions().toCharArray()) {
+        final char[] directions = hoover.getInstructions().toCharArray();
+        for (char direction : directions) {
             hoover.move(direction);
             hoover.cleanCell();
         }
-
-
     }
 
 
