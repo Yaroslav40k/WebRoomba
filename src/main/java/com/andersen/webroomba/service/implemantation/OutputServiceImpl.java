@@ -4,7 +4,7 @@ import com.andersen.webroomba.entity.GridCleaningResult;
 import com.andersen.webroomba.entity.Input;
 import com.andersen.webroomba.entity.Output;
 import com.andersen.webroomba.repository.OutputRepository;
-import com.andersen.webroomba.serializer.JsonSerializer;
+import com.andersen.webroomba.serializer.ObjectToJsonSerializer;
 import com.andersen.webroomba.service.OutputService;
 import org.springframework.stereotype.Service;
 
@@ -19,9 +19,9 @@ import java.util.List;
 public class OutputServiceImpl implements OutputService {
 
     private final OutputRepository repository;
-    private final JsonSerializer serializer;
+    private final ObjectToJsonSerializer serializer;
 
-    public OutputServiceImpl(OutputRepository repository, JsonSerializer serializer) {
+    public OutputServiceImpl(OutputRepository repository, ObjectToJsonSerializer serializer) {
         this.repository = repository;
         this.serializer = serializer;
     }

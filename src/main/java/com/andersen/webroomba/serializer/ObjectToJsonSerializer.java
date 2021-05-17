@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @since 15.05.2021
  */
 @Component
-public class JsonSerializer {
+public class ObjectToJsonSerializer {
 
     public String serializeObject(Object json) {
         Gson jsonCreator = new GsonBuilder().create();

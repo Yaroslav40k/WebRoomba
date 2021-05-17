@@ -101,8 +101,11 @@ F. Optional endpoints to check persistance layer work:
 * GET http://localhost:8080/api/statistic/inputs - returns all inputs from current session
 * GET http://localhost:8080/api/statistic/outputs - returns all outputs from current session
 
-All endpoints can be called via Postman or similar program.
+G. Optional endpoints to check persistance layer work:
+* All endpoints can be called via Postman or similar program.
 If you need Postman endpoints collection - contact me.
+
+* Also, you can use Swagger console right out of your browser : http://localhost:8080/swagger-ui.html#
 
 ## Validators
 
@@ -117,6 +120,7 @@ For more information check 'com.andersen.webroomba.validator' package.
 
 Junit5 Jupiter based tests should be pushed during each 'build' operation, right after Maven compile stage.
 Currently, there are 37 different unit test in the project, covering 123 cases.
+Pay attention, that the most important - are validator tests, since they prevent an application from using corrupted variables.
 
 ### Break down into 'end to end' tests
 

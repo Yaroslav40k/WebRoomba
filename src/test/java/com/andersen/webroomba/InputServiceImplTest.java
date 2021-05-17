@@ -3,7 +3,7 @@ package com.andersen.webroomba;
 import com.andersen.webroomba.entity.GridConfiguration;
 import com.andersen.webroomba.entity.Input;
 import com.andersen.webroomba.repository.InputRepository;
-import com.andersen.webroomba.serializer.JsonSerializer;
+import com.andersen.webroomba.serializer.ObjectToJsonSerializer;
 import com.andersen.webroomba.service.implemantation.InputServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,7 +28,7 @@ class InputServiceImplTest {
     private InputServiceImpl inputService;
 
     @Mock private InputRepository repository;
-    @Mock private JsonSerializer serializer;
+    @Mock private ObjectToJsonSerializer serializer;
 
     @BeforeEach
     void setUp() {

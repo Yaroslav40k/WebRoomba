@@ -1,12 +1,10 @@
 package com.andersen.webroomba;
 
 import com.andersen.webroomba.entity.GridCleaningResult;
-import com.andersen.webroomba.entity.GridConfiguration;
 import com.andersen.webroomba.entity.Input;
 import com.andersen.webroomba.entity.Output;
 import com.andersen.webroomba.repository.OutputRepository;
-import com.andersen.webroomba.serializer.JsonSerializer;
-import com.andersen.webroomba.service.implemantation.InputServiceImpl;
+import com.andersen.webroomba.serializer.ObjectToJsonSerializer;
 import com.andersen.webroomba.service.implemantation.OutputServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -34,7 +32,7 @@ class OutputServiceImplTest {
     @Mock
     private OutputRepository repository;
     @Mock
-    private JsonSerializer serializer;
+    private ObjectToJsonSerializer serializer;
 
     @BeforeEach
     void setUp() {

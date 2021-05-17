@@ -3,7 +3,7 @@ package com.andersen.webroomba.service.implemantation;
 import com.andersen.webroomba.entity.GridConfiguration;
 import com.andersen.webroomba.entity.Input;
 import com.andersen.webroomba.repository.InputRepository;
-import com.andersen.webroomba.serializer.JsonSerializer;
+import com.andersen.webroomba.serializer.ObjectToJsonSerializer;
 import com.andersen.webroomba.service.InputService;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +18,9 @@ import java.util.List;
 public class InputServiceImpl implements InputService {
 
     private final InputRepository repository;
-    private final JsonSerializer serializer;
+    private final ObjectToJsonSerializer serializer;
 
-    public InputServiceImpl(InputRepository repository, JsonSerializer serializer) {
+    public InputServiceImpl(InputRepository repository, ObjectToJsonSerializer serializer) {
         this.repository = repository;
         this.serializer = serializer;
     }
