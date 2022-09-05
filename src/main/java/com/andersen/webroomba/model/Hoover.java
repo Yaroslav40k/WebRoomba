@@ -76,5 +76,16 @@ public interface Hoover {
      */
     void setLidar(Lidar lidar);
 
+    /**
+     * Removes dirt container from hoover.
+     */
+    DirtContainer ejectDirtContainer();
+
+    /**
+     *
+     * @param dirtContainer
+     */
+    void setDirtContainer(DirtContainer dirtContainer);
+
 
 }
