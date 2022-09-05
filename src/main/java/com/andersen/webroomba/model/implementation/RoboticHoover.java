@@ -17,7 +17,6 @@ public class RoboticHoover implements Hoover {
     private String instructions;
     private Lidar lidar;
     private DirtContainer dirtContainer;
-    private int collectedDirtPatches;
 
     public void fillDirtContainer() {
         dirtContainer.addDirt();
@@ -25,7 +24,10 @@ public class RoboticHoover implements Hoover {
 
     @Override
     public void move(final char direction) throws IllegalArgumentException {
-        GridCellAddress newHoverLocation = new GridCellAddress(this.getLocation().getAddress().getXCoordinate(), this.getLocation().getAddress().getYCoordinate());
+        GridCellAddress newHoverLocation = new GridCellAddress(
+                this.getLocation().getAddress().getXCoordinate(),
+                this.getLocation().getAddress().getYCoordinate());
+
         switch (direction) {
             case ('W'):
                 newHoverLocation.setXCoordinate(newHoverLocation.getXCoordinate() - 1);
@@ -96,7 +98,7 @@ public class RoboticHoover implements Hoover {
     }
 
     @Override
-    public DirtContainer ejectDirtContainer() {
+    public DirtContainer getDirtContainer() {
         return dirtContainer;
     }
 

@@ -16,7 +16,7 @@ public class HooverDirtContainerService implements DirtContainerService {
 
     @Override
     public void cleanContainer(Hoover testHoover) {
-        DirtContainer dirtContainer = testHoover.ejectDirtContainer();
+        DirtContainer dirtContainer = testHoover.getDirtContainer();
         testHoover.setDirtContainer(null);
         dirtContainer.removeDirt();
         testHoover.setDirtContainer(dirtContainer);
