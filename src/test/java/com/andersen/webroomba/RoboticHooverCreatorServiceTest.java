@@ -4,6 +4,7 @@ import com.andersen.webroomba.entity.inner.GridConfiguration;
 import com.andersen.webroomba.model.Hoover;
 import com.andersen.webroomba.model.implementation.HooverLidar;
 import com.andersen.webroomba.model.implementation.RoomGrid;
+import com.andersen.webroomba.service.DirtContainerService;
 import com.andersen.webroomba.service.LidarCreatorService;
 import com.andersen.webroomba.service.implemantation.RoboticHooverCreatorService;
 import org.junit.jupiter.api.BeforeEach;
@@ -30,9 +31,11 @@ class RoboticHooverCreatorServiceTest {
 
     @Mock private LidarCreatorService lidarCreatorService;
 
+    @Mock private DirtContainerService dirtContainerService;
+
     @BeforeEach
     void setUp() {
-        roboticHooverCreatorService = new RoboticHooverCreatorService(lidarCreatorService);
+        roboticHooverCreatorService = new RoboticHooverCreatorService(lidarCreatorService, dirtContainerService);
     }
 
     @ParameterizedTest
