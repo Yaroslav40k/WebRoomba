@@ -8,6 +8,7 @@ import com.andersen.webroomba.model.DirtContainer;
  */
 public class HooverDirtContainer implements DirtContainer {
 
+    private static final int EMPTY_DIRT_CONTAINER_COUNTER = 0;
     private int collectedDirtPatches;
 
     @Override
@@ -23,7 +24,7 @@ public class HooverDirtContainer implements DirtContainer {
     @Override
     public int removeDirt () {
         int removedDirtPatches = collectedDirtPatches;
-        collectedDirtPatches = 0;
+        collectedDirtPatches = EMPTY_DIRT_CONTAINER_COUNTER;
         return removedDirtPatches;
     }
 

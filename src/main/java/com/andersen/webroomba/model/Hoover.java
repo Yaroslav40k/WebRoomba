@@ -79,7 +79,7 @@ public interface Hoover {
     /**
      * Removes dirt container from hoover.
      */
-    DirtContainer ejectDirtContainer();
+    DirtContainer getDirtContainer();
 
     /**
      *
