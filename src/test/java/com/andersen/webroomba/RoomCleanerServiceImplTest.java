@@ -3,6 +3,7 @@ package com.andersen.webroomba;
 import com.andersen.webroomba.entity.inner.GridCleaningResult;
 import com.andersen.webroomba.model.Hoover;
 import com.andersen.webroomba.model.implementation.RoboticHoover;
+import com.andersen.webroomba.service.DirtContainerService;
 import com.andersen.webroomba.service.HooverCommandsExecutorService;
 import com.andersen.webroomba.service.HooverDeployerService;
 import com.andersen.webroomba.service.ResultAcquirerService;
@@ -28,10 +29,15 @@ class RoomCleanerServiceImplTest {
     @Mock private HooverDeployerService hooverDeployer;
     @Mock private HooverCommandsExecutorService hooverCommandsExecutor;
     @Mock private ResultAcquirerService resultAcquirerService;
+    @Mock private DirtContainerService dirtContainerService;
 
     @BeforeEach
     void setUp() {
-        roomCleanerService = new RoomCleanerServiceImpl(hooverDeployer, hooverCommandsExecutor, resultAcquirerService);
+        roomCleanerService = new RoomCleanerServiceImpl(
+                hooverDeployer,
+                hooverCommandsExecutor,
+                resultAcquirerService,
+                dirtContainerService);
     }
 
     @Test

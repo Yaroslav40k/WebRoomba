@@ -1,6 +1,7 @@
 package com.andersen.webroomba.model.implementation;
 
 import com.andersen.webroomba.model.Cell;
+import com.andersen.webroomba.model.DirtContainer;
 import com.andersen.webroomba.model.Grid;
 import com.andersen.webroomba.model.Hoover;
 import com.andersen.webroomba.model.Lidar;
@@ -15,15 +16,18 @@ public class RoboticHoover implements Hoover {
     private Cell location;
     private String instructions;
     private Lidar lidar;
-    private int collectedDirtPatches;
+    private DirtContainer dirtContainer;
 
-    public void fillDirtContainer () {
-        collectedDirtPatches++;
+    public void fillDirtContainer() {
+        dirtContainer.addDirt();
     }
 
     @Override
     public void move(final char direction) throws IllegalArgumentException {
-        GridCellAddress newHoverLocation = new GridCellAddress(this.getLocation().getAddress().getXCoordinate(), this.getLocation().getAddress().getYCoordinate());
+        GridCellAddress newHoverLocation = new GridCellAddress(
+                this.getLocation().getAddress().getXCoordinate(),
+                this.getLocation().getAddress().getYCoordinate());
+
         switch (direction) {
             case ('W'):
                 newHoverLocation.setXCoordinate(newHoverLocation.getXCoordinate() - 1);
@@ -65,7 +69,7 @@ public class RoboticHoover implements Hoover {
 
     @Override
     public int getCollectedDirtPatches() {
-        return collectedDirtPatches;
+        return dirtContainer.getCollectedDirt();
     }
 
     @Override
@@ -75,7 +79,7 @@ public class RoboticHoover implements Hoover {
 
     @Override
     public void setLocation(GridCell gridCell) {
-        this.location=gridCell;
+        this.location = gridCell;
     }
 
     @Override
@@ -85,13 +89,22 @@ public class RoboticHoover implements Hoover {
 
     @Override
     public void setGrid(RoomGrid grid) {
-             this.grid = grid;
+        this.grid = grid;
     }
 
     @Override
     public void setLidar(Lidar lidar) {
-          this.lidar =lidar;
+        this.lidar = lidar;
     }
 
+    @Override
+    public DirtContainer getDirtContainer() {
+        return dirtContainer;
+    }
+
+    @Override
+    public void setDirtContainer(DirtContainer dirtContainer) {
+        this.dirtContainer = dirtContainer;
+    }
 
 }
